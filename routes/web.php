@@ -33,3 +33,14 @@ Route::get('proyectos/edit/{id}', function($id) {
 Route::get('perfil/{id?}', function($id = null) {
     return $id ? 'Visualizar el currículo de '. $id : 'Visualizar el currículo propio';
 })->where('id', '[0-9]*');
+
+
+// pruebas layout
+
+Route::get('en/layout1', function() {
+    return view('pruebaLayout1');
+})->name('layout1');
+
+Route::get('en/layout2', function() {
+    return view('pruebaLayout2');
+})->name('layout2');
