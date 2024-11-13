@@ -1,4 +1,7 @@
-<!--<html>
+@extends('dopetrope.master')
+
+<!--
+    <html>
     <head>
         <title>Mi Web</title>
     </head>
@@ -13,6 +16,8 @@
     </body>
 </html>
 -->
+
+<!--
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,30 +83,30 @@
 </head>
 <body>
 
-    <!-- Header -->
+
     <header>
         <h1>MarcaPersonalFP</h1>
 
     </header>
 
-    <!-- Contenedor principal que tiene tanto el sidebar como el main -->
+
     <div class="main-container">
-        <!-- Sidebar -->
+
         <sidebar>
             <h2>Menú del Sidebar</h2>
             @yield('menu')
         </sidebar>
 
-        <!-- Main Content -->
+
         <main>
             <div class="content">
-                @yield('content') <!-- Aquí se incluirá el contenido dinámico -->
+                @yield('content')
             </div>
         </main>
     </div>
 
 </body>
 </html>
-
+-->
 
 
