@@ -33,7 +33,10 @@ Route::get('proyectos/edit/{id}', function($id) {
 Route::get('perfil/{id?}', function($id = null) {
     return $id ? 'Visualizar el currículo de '. $id : 'Visualizar el currículo propio';
 })->where('id', '[0-9]*');
+<<<<<<< HEAD
 
 Route::get('/home/{nombre?}', function($nombre = null) {
     return view('home',array('nombre' => $nombre));
 });
+=======
+>>>>>>> feb49cb499dbccf752afddffd98c03d4d793dd8d
