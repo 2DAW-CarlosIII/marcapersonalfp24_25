@@ -2,6 +2,7 @@
 
 @section('content')
 
-    Pantalla principal
+    Vista detalle proyecto {{$id}}
 
 @stop
+

@@ -2,6 +2,6 @@
 
 @section('content')
 
-    Pantalla principal
+    Modificar proyecto {{$id}};
 
 @stop
