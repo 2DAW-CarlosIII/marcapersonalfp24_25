@@ -6,6 +6,8 @@ use App\Models\Proyecto;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Schema;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +16,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Model::unguard();
+        Schema::disableForeignKeyConstraints();
         // User::factory(10)->create();
         if(User::count() == 0) {
             if(config('app.env') ==='local'){
@@ -27,6 +31,9 @@ class DatabaseSeeder extends Seeder
 
         self::seedProyectos();
         $this->command->info('Tabla proyectos inicializada con datos!');
+        $this->call(ReconocimientosTableSeeder::class);
+        Schema::enableForeignKeyConstraints();
+        Model::reguard();
     }
     private static function seedProyectos()
     {

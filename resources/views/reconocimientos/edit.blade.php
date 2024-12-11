@@ -16,29 +16,22 @@
 
 	            <div class="form-group">
 	               <label for="estudiante_id">Estudiante id</label>
-	               <input type="text" name="estudiante_id" id="estudiante_id" class="form-control">
+	               <input type="number" name="estudiante_id" id="estudiante_id" class="form-control" value="{{ $reconocimiento->estudiante_id }}">
 	            </div>
 
 	            <div class="form-group">
-	               <label for="docente_validator">Actividad id</label>
-	               <input type="number" name="docente_validator" id="docente_validator">
+	               <label for="actividad_id">Actividad id</label>
+	               <input type="number" name="actividad_id" id="actividad_id" value="{{ $reconocimiento->actividad_id }}">
 	            </div>
 
 	            <div class="form-group">
-	               <label for="documento">Documento</label><br />
-                    https://github.com/2DAW-CarlosIII/
-	               <input type="text" name="documento" id="documento" class="form-control">
-	            </div>
-
-	            <div class="form-group">
-	               <label for="fecha">Fecha</label>
-	               <textarea name="fecha" id="fecha" class="form-control" rows="3"></textarea>
-                   <br />
+	               <label for="documento">Documento</label>
+	               <input type="text" name="documento" id="documento" class="form-control" value="{{ $reconocimiento->documento }}">
 	            </div>
 
                 <div class="form-group">
-                    <label for="docente_validator">Docente validator</label>
-                    <input type="number" name="docente_validator" id="docente_validator">
+                    <label for="docente_validador">Docente validador</label>
+                    <input type="number" name="docente_validador" id="docente_validador" value="{{ $reconocimiento->docente_validador }}">
                  </div>
 
 	            <div class="form-group text-center">
