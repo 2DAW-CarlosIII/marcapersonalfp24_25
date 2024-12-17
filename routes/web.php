@@ -1,51 +1,19 @@
 <?php
-
-use App\Http\Controllers\HomeController;
-use App\Models\Estudiante;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'getHome']);
-
-Route::get('login', function() {
-    return view('auth.login');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('logout', function() {
-    return 'Logout usuario';
-});
-
-Route::get('perfil/{id?}', function($id = null) {
-    return $id ? 'Visualizar el currículo de '. $id : 'Visualizar el currículo propio';
-})->where('id', '[0-9]*');
-
-Route::get('pruebaDB/{votos?}', function ($votos = null) {
-    $html = getEstadisticas();
-    Estudiante::where('nombre', 'Juan')
-        ->where('apellidos', 'Martínez')
-        ->delete();
-    $html .= getEstadisticas();
-    return $html;
-    // return $estudiante->nombre;
-});
-
-function getEstadisticas() {
-    $count = Estudiante::where('votos', '>', 100)->count();
-    $max = Estudiante::max('votos');
-    $min = Estudiante::min('votos');
-    $media = Estudiante::avg('votos');
-    $total = Estudiante::sum('votos');
-    $html = '<ul>';
-    $html .= '<li>Estudiantes con más de 100 votos: ' . $count . '</li>';
-    $html .= '<li>Máximo número de votos: ' . $max . '</li>';
-    $html .= '<li>Mínimo número de votos: ' . $min . '</li>';
-    $html .= '<li>Media de votos: ' . $media . '</li>';
-    $html .= '<li>Total de votos: ' . $total . '</li>';
-    $html .= "</ul>\n<ul>";
-    return $html;
-}
-
-
+require __DIR__.'/auth.php';
 include __DIR__.'/docentes.php';
 include __DIR__.'/actividades.php';
 include __DIR__.'/curriculos.php';

@@ -1,0 +1,330 @@
+[33mcommit 6a764881b774fd4769097995534879b32360440b[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/datosEntradaProyectos[m[33m)[m
+Author: alumno <alumno@vm1>
+Date:   Mon Dec 16 09:51:58 2024 +0100
+
+    proyecto
+
+[33mcommit 53e9bed1fc359d3c685973ae2224bf3cd9d8f637[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 87d6bc5 a83d603
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Mon Dec 16 08:19:19 2024 +0100
+
+    Merge pull request #129 from albsierra/basesDatos
+    
+    Bases datos de Estudiantes
+
+[33mcommit a83d603b6d5573410495c34097cb497b48da11a2[m
+Merge: cb505a8 87d6bc5
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Mon Dec 16 08:19:07 2024 +0100
+
+    Merge branch 'main' into basesDatos
+
+[33mcommit 87d6bc52b025290a93c690a98d625d4368726587[m
+Merge: 5815fa7 107d7e6
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:49:07 2024 +0100
+
+    Merge pull request #116 from gorkaaaaa/BBDDActividades
+    
+    Gestión de datos de Actividades
+
+[33mcommit 107d7e6e48feb67fd8692e0b999a436f1331e0a7[m
+Merge: b2f7a17 5815fa7
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:48:59 2024 +0100
+
+    Merge branch 'main' into BBDDActividades
+
+[33mcommit 5815fa74d0b251887c5aca8b0f8114fced1a0133[m
+Merge: 88deee2 e15e5e8
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:42:58 2024 +0100
+
+    Merge pull request #119 from davidp209/BDconfiguracion
+    
+    Ejercicio 1 - Configuración de la base de datos y migraciones.Tabla
+
+[33mcommit e15e5e83aaf2f15441e8a5022df2d2759f664a4b[m
+Merge: 11a6601 88deee2
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:42:49 2024 +0100
+
+    Merge branch 'main' into BDconfiguracion
+
+[33mcommit b2f7a17ec1f5f13a76b72dffe47ee9465d91e48e[m
+Author: Gorka <659304@alu.murciaeduca.es>
+Date:   Thu Dec 12 09:42:13 2024 +0100
+
+    correcciones
+
+[33mcommit 88deee20685c05ad1fcc916c7a442b9592558382[m
+Merge: 50c0e7f a2fde08
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:37:06 2024 +0100
+
+    Merge pull request #125 from MarioAviles/BDdocentes
+    
+    Ejercicio1 docentes
+
+[33mcommit a2fde08245be638988562154c1639e1964f57b26[m
+Merge: cbe1472 50c0e7f
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:36:22 2024 +0100
+
+    Merge branch 'main' into BDdocentes
+
+[33mcommit 50c0e7f8b8a33a97ae6c3a9745f61baea42d0044[m
+Merge: fce043b f72f6d3
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 12 09:31:43 2024 +0100
+
+    Merge pull request #126 from juanfranp19/DBCurriculos
+    
+    gestión de datos de currículos
+
+[33mcommit cbe14725f9641d920d56b21d7d12076b106b8ff5[m
+Author: Mario Avilés <4150123@alu.murciaeduca.es>
+Date:   Thu Dec 12 09:25:27 2024 +0100
+
+    Cambios corregidos
+
+[33mcommit 11a6601993eaf18e4c1d662eb4f18370bd5942cc[m
+Author: David Paredes <1918862@alu.murciaeduca.es>
+Date:   Thu Dec 12 09:23:18 2024 +0100
+
+    Correcciones hechas
+
+[33mcommit d60b3bf1e5ab4a2cae77c4275bf4e13f90f27edd[m
+Author: Mario Avilés <4150123@alu.murciaeduca.es>
+Date:   Thu Dec 12 08:57:22 2024 +0100
+
+    cambio en el for each
+
+[33mcommit 2d396becdd622f06414f0acaa6ee3c00cde3d36f[m
+Author: David Paredes <1918862@alu.murciaeduca.es>
+Date:   Wed Dec 11 21:20:42 2024 +0100
+
+    Cambio para mostrar los cambios en el edit
+
+[33mcommit f72f6d3479b446d9410992a1a32d44d26c90f930[m
+Author: Juanfran Pagán <1913955@alu.murciaeduca.es>
+Date:   Wed Dec 11 20:21:26 2024 +0100
+
+    gestión de datos de currículos
+
+[33mcommit d89802f9477ad959e9e152f356b64e5afcc0c8a4[m
+Author: Mario Avilés <4150123@alu.murciaeduca.es>
+Date:   Wed Dec 11 20:02:49 2024 +0100
+
+    Ejercicio1 docentes
+
+[33mcommit dde22f7b2b3f3e55714715fd3a54f0c002828476[m
+Author: David Paredes <1918862@alu.murciaeduca.es>
+Date:   Wed Dec 11 11:25:32 2024 +0100
+
+    Ejercicio 1 - Configuración de la base de datos y migraciones.Tabla Reconocimientos
+
+[33mcommit 30aab00324b4cf118006bdfd6bd34c40ba745e25[m
+Author: Gorka <659304@alu.murciaeduca.es>
+Date:   Wed Dec 11 09:58:32 2024 +0100
+
+    Gestion de datos de Actividades
+
+[33mcommit fce043b77c7b09986dd2648411d38ea951a44f21[m
+Author: xSergioz <148429623+xSergioz@users.noreply.github.com>
+Date:   Wed Dec 11 09:06:21 2024 +0100
+
+    Gestionando proyectos desde BD (#99)
+
+[33mcommit cb505a8673e1e1c37fa7a5b7f283cd6789ff2dce[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Dec 5 09:40:32 2024 +0100
+
+    Database Seeders, Factories, Query Builder
+
+[33mcommit 8c9de41c5f1e391b1636d484176e3bbc5e1f0fbd[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Tue Dec 3 09:53:24 2024 +0100
+
+    Columnas de Estudiantes y gestión de registros
+
+[33mcommit 6013500a856b4430eecc19f89760c9ef5cc6e68b[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Mon Dec 2 08:56:09 2024 +0100
+
+    Añadiendo claves ajenas
+
+[33mcommit a3ff64d19f90e97bf9a2cb4b21e655ead4dfe14f[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Nov 28 09:30:34 2024 +0100
+
+    Añadiendo migraciones para crear y modificar tablas
+
+[33mcommit e3eda65b72d609afc54c28010ae070c1b134acdb[m
+Merge: b173dd0 c3ae248
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 27 08:18:48 2024 +0100
+
+    Merge pull request #77 from albsierra/gruposRutas
+    
+    Agrupando rutas con prefijos
+
+[33mcommit c3ae24814e73c53adeced750acb58617e7d66499[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 27 08:17:06 2024 +0100
+
+    Agrupando rutas con prefijos
+
+[33mcommit b173dd07b8f115d6c06dae868b2b3f5b07f05ecc[m
+Author: J.Alejandro Martínez Markman <106510785+Alejandro83658@users.noreply.github.com>
+Date:   Tue Nov 26 11:39:14 2024 +0100
+
+    Solución archivo del test (#60)
+    
+    * Solucion archivo del test
+    
+    * Cambio de nombre y clase al archivo test
+
+[33mcommit 46fd7ab815ba29145a2eb2feccfb54c67563b507[m
+Merge: 1dbba7c 38fa627
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Sun Nov 24 17:49:18 2024 +0100
+
+    Merge pull request #56 from PabloPalC/ejercicioUserController
+    
+    closes #24
+
+[33mcommit 1dbba7ca7d0858d237bf882eec8b94094c28e2d6[m
+Author: Adrimrtz16 <4281885@alu.murciaeduca.es>
+Date:   Sun Nov 24 17:46:19 2024 +0100
+
+    Ejercicio de Curriculo hecho (#52)
+    
+    commit combinado de los 5 realizados por @Adrimrtz16
+
+[33mcommit 149800c554201a1668a135c58fabaf798e201fe6[m
+Merge: fd45be9 e86c69e
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Sun Nov 24 17:39:40 2024 +0100
+
+    Merge pull request #55 from MarioAviles/controladorReconocimiento
+    
+    closes #26
+
+[33mcommit e86c69ec70332510a1f744c3106df6a560cec991[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Sun Nov 24 17:38:36 2024 +0100
+
+    Botón para editar reconocimiento.
+
+[33mcommit fd45be9a8223d7bbcf012caf64a5c7084209bff2[m
+Merge: ff83e32 0b48675
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Sun Nov 24 17:34:58 2024 +0100
+
+    Merge pull request #48 from MFGalu/ejerciciosControladorActividades
+    
+    closes #27
+
+[33mcommit b93c5e42ed2799af5319524a1d381d5a744e04cc[m
+Author: Mario Avilés <4150123@alu.murciaeduca.es>
+Date:   Thu Nov 21 09:36:04 2024 +0100
+
+    Ejercicio reconocimientosController resuelto
+
+[33mcommit 38fa627154de30b19445b604c2a9e8799acdb802[m
+Author: Pablo Palazon <pablocryystalz24@gmail.com>
+Date:   Thu Nov 21 09:35:04 2024 +0100
+
+    Ejercicio UserController Resuelto
+
+[33mcommit 0b48675a674bf3a57ce2363b66dd0c1032ee829a[m
+Author: Martín Fresno <4136605@alu.murciaeduca.es>
+Date:   Thu Nov 21 08:52:59 2024 +0100
+
+    Creado el Controlador de Actividades
+
+[33mcommit ff83e327253189d8b5446311e3462742818364f2[m
+Merge: 2aff76d 1f94fc6
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 20 09:50:13 2024 +0100
+
+    Merge pull request #32 from albsierra/ejercicioControladores
+    
+    Ejercicio controlador de proyectos resuelto
+
+[33mcommit 1f94fc629ebabf5b933e408ce16576af22bcb5a0[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 20 09:49:06 2024 +0100
+
+    rutas distribuidas en ficheros distintos
+
+[33mcommit 3199cf02abb46e97647fe683b237dec955d00eda[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 20 09:36:18 2024 +0100
+
+    Ejercicio controladores con test
+
+[33mcommit 3943b3ad16df4ac5dfe7591216440856ed246443[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Wed Nov 20 09:10:20 2024 +0100
+
+    Ejercicio de controladores resuelto o casi
+
+[33mcommit 2faf2c2119589dec12003e09d6a6d602180df21f[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Tue Nov 19 09:30:23 2024 +0100
+
+    Solución del ejercicio hasta el index de proyectos
+
+[33mcommit 2aff76d89f87a6da9feac8e817024badb8e2df20[m
+Merge: feb49cb e16e778
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Mon Nov 18 08:02:53 2024 +0100
+
+    Merge pull request #18 from JoseMariaGarreH/ejerciciosVistas
+    
+    Solución ejercicio vista
+
+[33mcommit e16e7781b76efaad9d2ef4d40bec6076f5c7871c[m
+Author: Jose Maria <josemariagarrehermosilla5@gmail.com>
+Date:   Thu Nov 14 09:44:56 2024 +0100
+
+    Solución ejercicio vista
+
+[33mcommit feb49cb499dbccf752afddffd98c03d4d793dd8d[m
+Merge: b70ec24 031b357
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Nov 14 09:07:29 2024 +0100
+
+    Merge pull request #4 from Dspatrick29/dopetrope
+    
+    Layout de dopetrope integrado
+
+[33mcommit 031b357ab0b97c3d08dff64dfe9df91c638dc16f[m
+Author: Patrick <1481463@alu.murciaeduca.es>
+Date:   Thu Nov 14 08:36:57 2024 +0100
+
+    Layout de dopetrope integrado
+
+[33mcommit b70ec24bc4f53dcb2620847555d8bccfadf8db55[m
+Merge: 65201e6 bd1702f
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Mon Nov 11 08:35:30 2024 +0100
+
+    Merge pull request #2 from Alejandro83658/main
+    
+    Solucion ejercicio rutas
+
+[33mcommit bd1702f1b479cf6936bf41c78c8ef1a5fdfbe595[m
+Author: Alejandro Martinez <11183658@alu.murciaeduca.es>
+Date:   Thu Nov 7 17:58:51 2024 +0100
+
+    Solucion ejercicio rutas
+
+[33mcommit 65201e62004fbb4e72c4882664c92e46d28ec083[m
+Author: Alberto Sierra <alberto.sierra@murciaeduca.es>
+Date:   Thu Nov 7 08:14:43 2024 +0100
+
+    Commit inicial
