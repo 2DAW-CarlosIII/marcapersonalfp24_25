@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class FamiliaProfesionalController extends Controller
 {
+    public $modelclass = FamiliaProfesional::class;
+
     /**
      * Display a listing of the resource.
      */
