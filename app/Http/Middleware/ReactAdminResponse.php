@@ -24,6 +24,11 @@ class ReactAdminResponse
             }
             $request->merge(['page' => intval($request->_start / $request->perPage) + 1]);
         }
+        $controller = $request->route()->getController();
+        $modelClassName = $controller->modelclass;
+        $query = self::applyFilter($request, $modelClassName::$filterColumns);
+        $query = self::applySort($request, $query);
+        $request->attributes->set('queryWithParameters', $query);
         $response = $next($request);
         if ($request->routeIs('*.index')) {
             abort_unless(property_exists($request->route()->controller, 'modelclass'), 500, "It must exists a modelclass property in the controller.");
@@ -40,5 +45,32 @@ class ReactAdminResponse
         } catch (\Throwable $th) {
         }
         return $response;
+    }
+
+    public static function applyFilter($request, $filterColumns)
+    {
+        $modelClassName = $request->route()->controller->modelclass;
+        $query = $modelClassName::query();
+        $filterValue = $request->q;
+
+        if ($filterValue) {
+            $query->where(function ($query) use ($filterValue, $filterColumns) {
+                foreach ($filterColumns as $column) {
+                    $query->orWhere($column, 'like', '%' . $filterValue . '%');
+                }
+            });
+        }
+        return $query;
+    }
+
+    public static function applySort($request, $query)
+    {
+        $sort = $request->_sort ?? 'id';
+        $order = $request->_order ?? 'asc';
+
+        if ($sort) {
+            $query->orderBy($sort, $order);
+        }
+        return $query;
     }
 }
