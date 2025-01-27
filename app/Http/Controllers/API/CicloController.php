@@ -11,16 +11,21 @@ class CicloController extends Controller
 {
 
     public $modelclass = Ciclo::class;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 63fadb2ec532ad2429f9f439ad3a108843eab333
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        return CicloResource::collection(
-            Ciclo::orderBy($request->_sort ?? 'id', $request->_order ?? 'asc')
-            ->paginate($request->perPage)
-        );
+        $query =
+            $request->attributes->has('queryWithParameters') ?
+            $request->attributes->get('queryWithParameters') :
+            Ciclo::query();
+        return CicloResource::collection($query->paginate($request->perPage));
     }
 
     /**
