@@ -6,6 +6,7 @@ use App\Http\Controllers\API\ActividadController;
 use App\Http\Controllers\API\FamiliaProfesionalController;
 use App\Http\Controllers\API\ProyectoController;
 use App\Http\Controllers\API\CurriculoController;
+use App\Http\Controllers\API\ParticipantesProyectosController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('users', UserController::class);
     Route::apiResource('proyectos', ProyectoController::class);
     Route::apiResource('reconocimientos', ReconocimientoController::class);
+    Route::apiResource('participantes_proyecto', ParticipantesProyectosController::class);
 });
 
 Route::any('/{any}', function (ServerRequestInterface $request) {
