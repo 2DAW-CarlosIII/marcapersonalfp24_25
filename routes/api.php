@@ -6,6 +6,7 @@ use App\Http\Controllers\API\ActividadController;
 use App\Http\Controllers\API\FamiliaProfesionalController;
 use App\Http\Controllers\API\ProyectoController;
 use App\Http\Controllers\API\CurriculoController;
+use App\Http\Controllers\API\ParticipantesProyectosController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::prefix('v1')->group(function () {
     Route::apiResource('ciclos', CicloController::class);
+    Route::apiResource('participantes_proyectos', ParticipantesProyectosController::class);
     Route::apiResource('actividades', ActividadController::class)->parameters(['actividades' => 'actividad']);
     Route::apiResource('familias_profesionales', FamiliaProfesionalController::class)->parameters([
         'familias_profesionales' => 'familiaProfesional'
