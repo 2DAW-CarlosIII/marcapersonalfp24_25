@@ -11,9 +11,9 @@ class ParticipantesProyecto extends Model
     use HasFactory;
 
     protected $fillable = [
-        'estudiante_id',
+        'users_id',
         'proyecto_id',
     ];
 
-    public static $filterColumns = ['estudiante_id', 'proyecto_id'];
+    public static $filterColumns = ['users_id', 'proyecto_id'];
 }

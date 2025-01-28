@@ -6,7 +6,7 @@ use App\Models\ParticipantesProyecto;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ParticipantesProyectosSeeder extends Seeder
+class ParticipantesProyectosTableSeeder extends Seeder
 {
     /**
      * Ejecutar las semillas de la base de datos.
@@ -16,7 +16,7 @@ class ParticipantesProyectosSeeder extends Seeder
         ParticipantesProyecto::truncate();
         foreach (self::generarDatosAleatorios() as $pp) {
             ParticipantesProyecto::insert([
-                'estudiante_id' => $pp['estudiante_id'],
+                'users_id' => $pp['users_id'],
                 'proyecto_id' => $pp['proyecto_id'],
             ]);
         }
@@ -33,7 +33,7 @@ class ParticipantesProyectosSeeder extends Seeder
         $datos = [];
         for ($i = 0; $i < 10; $i++) {
             $datos[] = [
-                'estudiante_id' => $estudiantes[$i],
+                'users_id' => $estudiantes[$i],
                 'proyecto_id' => $proyectos[$i],
             ];
         }
