@@ -37,6 +37,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('participantes_proyectos', ParticipanteProyectoController::class);
     Route::apiResource('users_ciclos', UsersCiclosController::class);
     Route::apiResource('competencias', CompetenciaController::class);
+    Route::get('empresas/count', [EmpresaController::class, 'count']);
     Route::apiResource('idiomas', IdiomaController::class);
     Route::get('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'indexProyectosCiclos']);
     Route::get('ciclos/{cicloId}/proyectos', [ProyectosCiclosController::class, 'indexCiclosProyectos']);

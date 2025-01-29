@@ -66,4 +66,10 @@ class EmpresaController extends Controller
                 'message' => 'Error: ' . $e->getMessage()], 400);
         }
     }
+
+    public function count(Request $request)
+    {
+        $count = Empresa::count();
+        return response()->json(['count' => $count]);
+    }
 }
