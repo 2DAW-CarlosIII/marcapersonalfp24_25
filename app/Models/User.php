@@ -47,4 +47,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function curriculo()
+    {
+        return $this->hasOne(Curriculo::class);
+    }
+
+    public static $filterColumns = [
+        'name',
+        'nombre',
+        'apellidos',
+        'email',
+    ];
 }
