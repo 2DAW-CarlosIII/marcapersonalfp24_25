@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class CurriculoController extends Controller
 {
+    public $modelClass = Curriculo::class;
+
     /**
      * Display a listing of the resource.
      */
