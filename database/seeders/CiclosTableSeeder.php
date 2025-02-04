@@ -23,14 +23,15 @@ class CiclosTableSeeder extends Seeder
                 // 'familia_id' => array_search($ciclo['codFamilia'], $codigosFamilias) + 1,
                 'grado' => $ciclo['grado'],
                 'nombre' => $ciclo['nombre'],
+                'familia_id' => $ciclo['familia_id'],
             ]);
         }
         $this->command->info('¡Tabla ciclos inicializada con datos!');
     }
 
     private static $ciclos = array(
-        array('codFamilia' => 'ADG','grado' => 'G.M.','codCiclo' => 'ACEC2','nombre' => 'Técnico en Actividades Ecuestres'),
-        array('codFamilia' => 'ADG','grado' => 'G.S.','codCiclo' => 'ACFI3','nombre' => 'Técnico Superior en Acondicionamiento Físico'),
+        array('codFamilia' => 'ADG','grado' => 'G.M.','codCiclo' => 'ACEC2','nombre' => 'Técnico en Actividades Ecuestres', 'familia_id' => 1),
+        array('codFamilia' => 'ADG','grado' => 'G.S.','codCiclo' => 'ACFI3','nombre' => 'Técnico Superior en Acondicionamiento Físico', 'familia_id' => 2),
         array('codFamilia' => 'ADG','grado' => 'BÁSICA','codCiclo' => 'ACID1','nombre' => 'Profesional Básico en Acceso y Conservación en Instalaciones Deportivas'),
         array('codFamilia' => 'ADG','grado' => 'G.S.','codCiclo' => 'EASO3','nombre' => 'Técnico Superior en Enseñanza y Animación Sociodeportiva'),
         array('codFamilia' => 'ADG','grado' => 'G.M.','codCiclo' => 'GMTL2','nombre' => 'Técnico en Guía en el Medio Natural y de Tiempo Libre'),

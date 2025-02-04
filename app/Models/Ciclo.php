@@ -19,4 +19,8 @@ class Ciclo extends Model
     ];
 
     public static $filterColumns = ['codCiclo', 'codFamilia', 'grado', 'nombre'];
+
+    public function familias() {
+        return $this->belongsTo(FamiliaProfesional::class,'familia_id');
+    }
 }
