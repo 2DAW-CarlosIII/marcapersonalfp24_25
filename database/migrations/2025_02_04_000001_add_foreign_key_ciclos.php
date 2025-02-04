@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ciclos', function (Blueprint $table) {
-            $table->string('codFamilia', 4)->after('codCiclo');
+            $table->foreign('codFamilia')->references('codigo')->on('familias_profesionales');
         });
     }
 
@@ -22,7 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('ciclos', function (Blueprint $table) {
-            $table->dropColumn('codFamilia');
+            $table->dropForeign(['codFamilia']);
         });
     }
 };

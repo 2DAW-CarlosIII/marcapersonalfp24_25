@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class FamiliaProfesionalController extends Controller
 {
+    public $modelclass = FamiliaProfesional::class;
+
     /**
      * Display a listing of the resource.
      */
@@ -37,6 +39,7 @@ class FamiliaProfesionalController extends Controller
      */
     public function show(FamiliaProfesional $familiaProfesional)
     {
+        $familiaProfesional->load('ciclos');
         return new FamiliaProfesionalResource($familiaProfesional);
     }
 

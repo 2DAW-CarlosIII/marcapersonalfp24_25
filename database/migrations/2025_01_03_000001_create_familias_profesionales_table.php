@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('familias_profesionales', function (Blueprint $table) {
             $table->id();
-            $table->char('codigo', 4);
+            $table->char('codigo', 4)->unique();
             $table->string('nombre', 200);
             $table->timestamps();
         });
