@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class UsersCiclosController extends Controller
 {
     public $modelclass = UsersCiclos::class;
+    
     /**
      * Display a listing of the resource.
      */

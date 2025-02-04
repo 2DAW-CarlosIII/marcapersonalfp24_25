@@ -17,4 +17,6 @@ class UsersIdiomas extends Model
         'nievl',
         'certificado'
     ];
+
+    public static $filterColumns = ['nivel', 'certificado'];
 }

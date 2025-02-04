@@ -16,4 +16,8 @@ class Actividad extends Model
         'docente_id',
         'insignia'
     ];
+
+    public static $filterColumns = [
+        'insignia'
+    ];
 }

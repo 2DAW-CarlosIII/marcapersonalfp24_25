@@ -39,7 +39,6 @@ class FamiliaProfesionalController extends Controller
      */
     public function show(FamiliaProfesional $familiaProfesional)
     {
-        $familiaProfesional->load('ciclos');
         return new FamiliaProfesionalResource($familiaProfesional);
     }
 

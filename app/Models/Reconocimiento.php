@@ -16,4 +16,8 @@ class Reconocimiento extends Model
         'documento',
         'docente_validador'
     ];
+
+    public static $filterColumns = [
+        'documento',
+    ];
 }
