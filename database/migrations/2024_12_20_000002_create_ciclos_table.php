@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('codCiclo', 6);
             $table->string('nombre');
             $table->string('grado', 30);
+            $table->unsignedBigInteger('familia_id');
+            $table->foreign('familia_id')->references('id')->on('familias_profesionales')->onDelete('cascade');
             $table->timestamps();
         });
     }

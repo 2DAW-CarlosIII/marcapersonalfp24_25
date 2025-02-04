@@ -13,6 +13,7 @@ class CiclosTableSeeder extends Seeder
      */
     public function run(): void
     {
+        $codigosFamilias = DB::table('familias_profesionales')->pluck('id')->toArray();
         DB::table('ciclos')->truncate();
         // $familias = FamiliasProfesionalesSeeder::$familias_profesionales;
         // $codigosFamilias = array_column($familias, 'codigo');
@@ -20,7 +21,7 @@ class CiclosTableSeeder extends Seeder
             DB::table('ciclos')->insert([
                 'codCiclo' => $ciclo['codCiclo'],
                 'codFamilia' => $ciclo['codFamilia'],
-                // 'familia_id' => array_search($ciclo['codFamilia'], $codigosFamilias) + 1,
+                'familia_id' => array_search($ciclo['familia_id'], $codigosFamilias) + 1,
                 'grado' => $ciclo['grado'],
                 'nombre' => $ciclo['nombre'],
             ]);
@@ -235,7 +236,10 @@ class CiclosTableSeeder extends Seeder
         array('codFamilia' => 'TMV','grado' => 'C.E. (G.S.)','codCiclo' => 'SVHE3','nombre' => 'Curso de Especialización en Mantenimiento y Seguridad en Sistemas de Vehículos Híbridos y Eléctricos'),
         array('codFamilia' => 'VIC','grado' => 'G.S.','codCiclo' => 'DFPC3','nombre' => 'Técnico Superior en Desarrollo y Fabricación de Productos Cerámicos'),
         array('codFamilia' => 'VIC','grado' => 'G.M.','codCiclo' => 'FAPC2','nombre' => 'Técnico en Fabricación de Productos Cerámicos'),
-        array('codFamilia' => 'VIC','grado' => 'BÁSICA','codCiclo' => 'VIAL1','nombre' => 'Profesional Básico en Vidriería y Alfarería')
+        array('codFamilia' => 'VIC','grado' => 'BÁSICA','codCiclo' => 'VIAL1','nombre' => 'Profesional Básico en Vidriería y Alfarería'),
+        array('codFamilia' => 'VIC','grado' => 'G.S.','codCiclo' => 'VITC3','nombre' => 'Técnico Superior en Vitrocerámica', 'grado' => 'G.S.'),
+        array('codFamilia' => 'VIC','grado' => 'G.S.','codCiclo' => 'VITC3','nombre' => 'Técnico Superior en Vitrocerámica', 'grado' => 'G.S.'),
+        array('codFamilia' => 'VIC','grado' => 'G.S.','codCiclo' => 'FAPC2','nombre' => 'Técnico en Fabricación de Productos Cerámicos', 'grado' => 'G.S.')
       );
 
 }

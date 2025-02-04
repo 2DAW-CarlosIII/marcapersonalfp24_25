@@ -21,6 +21,7 @@ class CicloFactory extends Factory
             'codCiclo' => 'Cic' . fake()->randomNumber(2, false),
             'codFamilia' => 'Fa' . fake()->randomNumber(2, false),
             'grado' => fake()->randomElement(['BÁSICA', 'G.M.', 'G.S.', 'C.E. G.M.', 'C.E. G.S.']),
+            'familia_id' => fake()->numberBetween(1, 10),
         ];
     }
 }
