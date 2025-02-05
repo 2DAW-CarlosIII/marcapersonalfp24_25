@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ciclo;
 use App\Models\FamiliaProfesional;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
