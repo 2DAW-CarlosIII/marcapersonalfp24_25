@@ -32,4 +32,7 @@ class Proyecto extends Model
         $this->attributes['metadatos'] = json_encode($value);
     }
 
+    public function users() {
+        return $this->belongsToMany(User::class, 'participantes_proyectos', 'proyecto_id', 'user_id');
+    }
 }

@@ -56,4 +56,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Curriculo::class);
     }
+
+    public function proyectos()
+    {
+        return $this->belongsToMany(Proyecto::class, 'participantes_proyectos', 'user_id', 'proyecto_id');
+    }
+
 }

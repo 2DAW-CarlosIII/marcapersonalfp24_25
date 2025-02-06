@@ -13,10 +13,10 @@ class UserResource extends JsonResource
      * @return array<string, mixed>
      */
     public function toArray(Request $request): array
-    {
-        return array_merge(
-            parent::toArray($request),
-            ['curriculo' => $this->curriculo]
-        );
-    }
+     {
+         return array_merge(parent::toArray($request), [
+             'curriculo' => new CurriculoResource($this->curriculo),
++            'proyectos' => ProyectoResource::collection($this->proyectos),
+         ]);
+     }
 }
