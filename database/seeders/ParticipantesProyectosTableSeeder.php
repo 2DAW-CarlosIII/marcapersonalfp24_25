@@ -2,33 +2,29 @@
 
 namespace Database\Seeders;
 
-use App\Models\ParticipanteProyecto;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use App\Models\Proyecto;
 
 class ParticipantesProyectosTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table('participantes_proyectos')->truncate();
+        $usuarios = User::all();
+        $proyectos = Proyecto::all();
 
-        $combinaciones = [];
+        foreach ($usuarios as $usuario) {
 
-        ParticipanteProyecto::factory(10)->make()->each(function ($participante) use (&$combinaciones) {
-            $key = "{$participante->user_id}-{$participante->proyecto_id}";
+            $numProyectos = rand(0, 2);
+            $proyectosAleatorios = $proyectos->random(min($numProyectos, $proyectos->count()));
+            $usuario->proyectos()->syncWithoutDetaching($proyectosAleatorios->pluck('id')->toArray());
+        }
 
+        foreach ($proyectos as $proyecto) {
 
-            while (isset($combinaciones[$key])) {
-                $participante->user_id = rand(1, 10);
-                $participante->proyecto_id = rand(1, 10);
-                $key = "{$participante->user_id}-{$participante->proyecto_id}";
-            }
-
-            $combinaciones[$key] = true;
-            $participante->save();
-        });
+            $numUsuarios = rand(0, 2);
+            $usuariosAleatorios = $usuarios->random(min($numUsuarios, $usuarios->count()));
+            $proyecto->users()->syncWithoutDetaching($usuariosAleatorios->pluck('id')->toArray());
+        }
     }
 }

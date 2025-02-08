@@ -14,8 +14,6 @@ class ProyectoResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return array_merge(parent::toArray($request), [
-            'users' => $this->user,
-        ]);
+        return parent::toArray($request);
     }
 }
