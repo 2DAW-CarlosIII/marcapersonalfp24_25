@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('users_competencias', function (Blueprint $table) {
             $table->foreignId('user_id');
             $table->foreignId('competencia_id');
-            $table->foreignId('docente_validador')->constrained('users', 'id');
+            $table->foreignId('docente_validador')->nullable()->constrained('users', 'id');
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -36,7 +37,10 @@ class User extends Authenticatable
     ];
 
     public static $filterColumns = [
-        'name', 'nombre', 'apellidos', 'email',
+        'name',
+        'nombre',
+        'apellidos',
+        'email',
     ];
 
     /**
@@ -55,5 +59,11 @@ class User extends Authenticatable
     public function curriculo()
     {
         return $this->hasOne(Curriculo::class);
+    }
+
+    // Defino la relacion muchos a muchos
+    public function competencias(): BelongsToMany
+    {
+        return $this->belongsToMany(Competencia::class, 'users_competencias');
     }
 }
