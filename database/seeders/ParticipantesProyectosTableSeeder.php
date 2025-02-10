@@ -19,12 +19,5 @@ class ParticipantesProyectosTableSeeder extends Seeder
             $proyectosAleatorios = $proyectos->random(min($numProyectos, $proyectos->count()));
             $usuario->proyectos()->syncWithoutDetaching($proyectosAleatorios->pluck('id')->toArray());
         }
-
-        foreach ($proyectos as $proyecto) {
-
-            $numUsuarios = rand(0, 2);
-            $usuariosAleatorios = $usuarios->random(min($numUsuarios, $usuarios->count()));
-            $proyecto->users()->syncWithoutDetaching($usuariosAleatorios->pluck('id')->toArray());
-        }
     }
 }
