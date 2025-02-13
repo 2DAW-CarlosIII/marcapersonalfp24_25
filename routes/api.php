@@ -14,7 +14,7 @@ use App\Http\Controllers\API\ReconocimientoController;
 use App\Http\Controllers\API\TokenController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\UsersCiclosController;
-use App\Models\UsersCiclos;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -45,12 +45,16 @@ Route::prefix('v1')->group(function () {
     Route::get('ciclos/{cicloId}/proyectos', [ProyectosCiclosController::class, 'indexCiclosProyectos']);
     Route::post('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'storeProyectoCiclo']);
     Route::apiResource('empresas', EmpresaController::class);
-    // emite un nuevo token
-    Route::post('tokens', [TokenController::class, 'store']);
-    Route::delete('tokens', [TokenController::class, 'destroy'])->middleware('auth:sanctum');
     Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
         return $request->user();
     });
+
+    // Líneas de autenticación
+    Route::post('tokens', [TokenController::class, 'store']);
+    Route::delete('tokens', [TokenController::class, 'destroy'])->middleware('auth:sanctum');
+    Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+    ->middleware('guest')
+    ->name('login');
 });
 
 
