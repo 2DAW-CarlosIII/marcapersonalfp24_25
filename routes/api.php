@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\ActividadController;
+use App\Http\Controllers\API\AdministradorController;
 use App\Http\Controllers\API\CicloController;
 use App\Http\Controllers\API\CompetenciaController;
 use App\Http\Controllers\API\CurriculoController;
@@ -38,6 +39,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('users', UserController::class);
     Route::apiResource('proyectos', ProyectoController::class);
     Route::apiResource('reconocimientos', ReconocimientoController::class);
+    Route::apiResource('administradores', AdministradorController::class);
     Route::apiResource('participantes_proyectos', ParticipanteProyectoController::class);
     Route::apiResource('users_ciclos', UsersCiclosController::class);
     Route::apiResource('competencias', CompetenciaController::class);

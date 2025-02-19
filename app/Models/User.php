@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -87,8 +88,14 @@ class User extends Authenticatable
         return $this->belongsToMany(Proyecto::class, 'participantes_proyectos', 'user_id', 'proyecto_id');
     }
 
+    public function administrador(): HasOne
+    {
+        return $this->hasOne(Administrador::class, 'user_id');
+    }
+
     public function isAdministrator(): bool
     {
-        return $this->email === env('ADMIN_EMAIL');
+        return $this->email === env('ADMIN_EMAIL') || $this->administrador()->exists();
+        //Para que el usuario sea administrador tanto por su email como por estar en la tabla administradores
     }
 }
