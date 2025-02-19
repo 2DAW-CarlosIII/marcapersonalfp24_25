@@ -15,6 +15,7 @@ use App\Http\Controllers\API\TokenController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\UsersCiclosController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\API\AdministradorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,7 @@ Route::prefix('v1')->group(function () {
     Route::apiResource('users_ciclos', UsersCiclosController::class);
     Route::apiResource('competencias', CompetenciaController::class);
     Route::apiResource('idiomas', IdiomaController::class);
+    Route::apiResource('administradores', AdministradorController::class);
     Route::get('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'indexProyectosCiclos']);
     Route::get('ciclos/{cicloId}/proyectos', [ProyectosCiclosController::class, 'indexCiclosProyectos']);
     Route::post('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'storeProyectoCiclo']);
