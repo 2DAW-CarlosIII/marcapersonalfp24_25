@@ -26,11 +26,13 @@ class UserFactory extends Factory
         $nombre = fake()->firstName();
         $apellidos = fake()->lastName();
         $name = "$nombre $apellidos";
+        $domain = fake()->randomElement(['@alu.murciaeduca.es', '@murciaeduca.es']);
+        $email = fake()->unique()->userName() . $domain;
         return [
             'name' => $name,
             'nombre' => $nombre,
             'apellidos' => $apellidos,
-            'email' => fake()->unique()->safeEmail(),
+            'email' => $email,
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
