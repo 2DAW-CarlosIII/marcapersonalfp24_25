@@ -87,8 +87,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Proyecto::class, 'participantes_proyectos', 'user_id', 'proyecto_id');
     }
 
+    public function admin ()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
     public function isAdministrator(): bool
     {
-        return $this->email === env('ADMIN_EMAIL');
+        return $this->admin()->exist();
     }
 }

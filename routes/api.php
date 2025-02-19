@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\ActividadController;
+use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\CicloController;
 use App\Http\Controllers\API\CompetenciaController;
 use App\Http\Controllers\API\CurriculoController;
@@ -46,6 +47,7 @@ Route::prefix('v1')->group(function () {
     Route::get('ciclos/{cicloId}/proyectos', [ProyectosCiclosController::class, 'indexCiclosProyectos']);
     Route::post('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'storeProyectoCiclo']);
     Route::apiResource('empresas', EmpresaController::class);
+    Route::apiResource('admin',AdminController::class);
     Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
         return $request->user();
     });
