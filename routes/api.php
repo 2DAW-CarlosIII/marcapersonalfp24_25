@@ -13,6 +13,7 @@ use App\Http\Controllers\API\ProyectoController;
 use App\Http\Controllers\API\ReconocimientoController;
 use App\Http\Controllers\API\TokenController;
 use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\AdministradorController;
 use App\Http\Controllers\API\UsersCiclosController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Http\Request;
@@ -46,6 +47,7 @@ Route::prefix('v1')->group(function () {
     Route::get('ciclos/{cicloId}/proyectos', [ProyectosCiclosController::class, 'indexCiclosProyectos']);
     Route::post('proyectos/{proyectoId}/ciclos', [ProyectosCiclosController::class, 'storeProyectoCiclo']);
     Route::apiResource('empresas', EmpresaController::class);
+    Route::apiResource('administradores', AdministradorController::class);
     Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
         return $request->user();
     });
