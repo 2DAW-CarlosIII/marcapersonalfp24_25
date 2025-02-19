@@ -19,8 +19,10 @@ class UsersTableSeeder extends Seeder
             if(config('app.env') ==='local'){
                 User::factory(10)->create();
                 User::factory()->create([
-                'name' => 'Test User',
-                'email' => 'test@example.com',
+                'nombre' => 'Martín',
+                'apellidos' => 'Fresno García',
+                'name' => 'Martín Fresno García',
+                'email' => '4136605@alu.murciaeduca.es'
                 ]);
             }
         }

@@ -27,6 +27,7 @@ class CurriculoController extends Controller
      */
     public function store(Request $request)
     {
+        abort_if($request->user()->cannot('create', Curriculo::class), 403);
 
         $curriculo = json_decode($request->getContent(), true);
         $curriculo = Curriculo::create($curriculo);
