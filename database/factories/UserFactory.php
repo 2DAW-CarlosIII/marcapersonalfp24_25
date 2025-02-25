@@ -25,9 +25,8 @@ class UserFactory extends Factory
     {
         $nombre = fake()->firstName();
         $apellidos = fake()->lastName();
-        $name = "$nombre $apellidos";
         return [
-            'name' => $name,
+            'name' => fake()->unique()->userName(),
             'nombre' => $nombre,
             'apellidos' => $apellidos,
             'email' => fake()->unique()->safeEmail(),
@@ -35,6 +34,26 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
+    }
+
+    /**
+     * Indicate that the model's email should be student.
+     */
+    public function alumno(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'email' => $attributes['name'] . '@' . env('STUDENT_EMAIL_DOMAIN', 'student.com'),
+        ]);
+    }
+
+    /**
+     * Indicate that the model's email should be teacher.
+     */
+    public function docente(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'email' => $attributes['name'] . '@' . env('TEACHER_EMAIL_DOMAIN', 'teacher.com'),
+        ]);
     }
 
     /**

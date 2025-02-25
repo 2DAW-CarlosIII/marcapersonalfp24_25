@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\CurriculoResource;
 use App\Models\Curriculo;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
+use Illuminate\Routing\Controllers\Middleware;
 
-class CurriculoController extends Controller
+class CurriculoController extends Controller implements HasMiddleware
 {
     public $modelclass = Curriculo::class;
 
@@ -27,6 +29,7 @@ class CurriculoController extends Controller
      */
     public function store(Request $request)
     {
+        abort_if ($request->user()->cannot('create', Curriculo::class), 403);
 
         $curriculo = json_decode($request->getContent(), true);
         $curriculo = Curriculo::create($curriculo);
@@ -58,8 +61,9 @@ class CurriculoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Curriculo $curriculo)
+    public function destroy(Request $request, Curriculo $curriculo)
     {
+        abort_if ($request->user()->cannot('delete', $curriculo), 403);
         try {
             $curriculo->delete();
             return response()->json(null, 204);
@@ -68,5 +72,12 @@ class CurriculoController extends Controller
                 'message' => 'Error: ' . $e->getMessage()
             ], 400);
         }
+    }
+
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('auth:sanctum', except: ['index', 'show'])
+        ];
     }
 }
