@@ -6,11 +6,20 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ActividadResource;
 use App\Models\Actividad;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Routing\Controllers\Middleware;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class ActividadController extends Controller
 {
     public $modelclass = Actividad::class;
+
+    public static function middleware(): array
+    {
+        return [
+            new Middleware('auth:sanctum', except: ['index', 'show']),
+        ];
+    }
 
     /**
      * Display a listing of the resource.
@@ -28,11 +37,14 @@ class ActividadController extends Controller
      */
     public function store(Request $request)
     {
+        Gate::authorize('create', Actividad::class);
+
         $actividad = json_decode($request->getContent(), true);
 
         $actividad = Actividad::create($actividad);
 
         return new ActividadResource($actividad);
+
     }
 
     /**
@@ -48,9 +60,11 @@ class ActividadController extends Controller
      */
     public function update(Request $request, Actividad $actividad)
     {
-        $actividadData = json_decode($request->getContent(), true);
+        Gate::authorize('update', $actividad);
 
-        $actividad->update($actividadData);
+        $actividad = json_decode($request->getContent(), true);
+
+        $actividad->update($actividad);
 
         return new ActividadResource($actividad);
     }
@@ -61,12 +75,15 @@ class ActividadController extends Controller
     public function destroy(Actividad $actividad)
     {
         try {
+            Gate::authorize('delete', $actividad);
             $actividad->delete();
-            return response()->json(null, 204);
+            return response()->json([
+                'message' => 'Actividad eliminada correctamente'
+            ], 200);
         }catch (\Exception $e) {
             return response()->json([
-                'message' => 'Error: ' . $e->getMessage()
-            ], 400);
+                'message' => 'Error al eliminar la actividad'
+            ], 500);
         }
     }
 }

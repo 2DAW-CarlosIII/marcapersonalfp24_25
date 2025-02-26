@@ -37,5 +37,23 @@ class Actividad extends Model
     {
         return $this->belongsToMany(User::class, 'reconocimientos', 'actividad_id', 'estudiante_id')->withPivot('documento');
     }
+
+    //gestion de roles
+
+    public function esDocente(): bool
+    {
+        return $this->getEmailDomain() === env('TEACHER_EMAIL_DOMAIN');
+    }
+
+    public function esPropietario($recurso, $propiedad = 'docente_id'): bool
+    {
+        return $recurso && $recurso->$propiedad === $this->id;
+    }
+
+    private function getEmailDomain(): string
+    {
+        $dominio = explode('@', $this->email)[1];
+        return $dominio;
+    }
 }
 

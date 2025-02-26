@@ -31,7 +31,7 @@ class CurriculoController extends Controller implements HasMiddleware
     {
         return CurriculoResource::collection(
             Curriculo::orderBy($request->_sort ?? 'id', $request->_order ?? 'asc')
-            ->paginate($request->perPage)
+                ->paginate($request->perPage)
         );
     }
 
