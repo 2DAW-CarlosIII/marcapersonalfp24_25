@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('competencias_actividades', function (Blueprint $table) {
 
             $table->unsignedBigInteger('actividad_id');
-            $table->foreign('actividad_id')->references('id')->on('actividades');
+            $table->foreign('actividad_id')->references('id')->on('actividades')->onDelete('cascade');
 
             $table->unsignedBigInteger('competencia_id');
-            $table->foreign('competencia_id')->references('id')->on('competencias');
+            $table->foreign('competencia_id')->references('id')->on('competencias')->onDelete('cascade');
 
             $table->timestamps();
         });
